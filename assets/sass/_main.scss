@@ -39,6 +39,17 @@ body {
     text-align: center;
 }
 
+a {
+    color: var(--fg-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--fg-important-color);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
 .dummy, .centered {
     display: inline-block;
     vertical-align: middle;
@@ -83,19 +94,6 @@ body {
             &:before {
                 @extend %lil-arrow;
             }
-        }
-    }
-
-    nav {
-        a {
-            color: var(--fg-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--fg-important-color);
-            text-decoration: underline;
-            text-decoration-style: wavy;
         }
     }
 }
