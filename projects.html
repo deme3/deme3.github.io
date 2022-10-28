@@ -1,0 +1,48 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projects | deme3.github.io</title>
+  <link rel="stylesheet" href="./assets/stylesheets/styles.css">
+  <script src="./assets/scripts/darkmode.js"></script>
+</head>
+<body>
+  <div class="dummy"></div><div class="centered">
+    <header>
+      <nav>
+        <a class="important-link" href="/index.html">home</a> &nbsp; <a class="important-link current" style="pointer-events: none;">projects</a>
+      </nav>
+    </header>
+    <main>
+      <section class="work">
+        <h1>Work</h1>
+        <article class="work">
+          <h2><a href="nest-academy.html">NEST Academy</a></h2>
+          <p>Proprietary platform for students to create a study plan and have a personal agenda in the NEST Academy programme.</p>
+          <p>Back-end written in Express.js + <a class="small external medium-link" href="https://ejs.co">EJS</a> + MySQL, front-end vanilla HTML / CSS / JavaScript.</p>
+          <p>Currently being rewritten using <a class="small external medium-link" href="https://preactjs.com">Preact.js</a>.</p>
+          <p><a href="nest-academy.html" class="important-link">more on this&mldr;</a></p>
+        </article>
+      </section>
+      <section class="personal">
+        <h1>Personal</h1>
+        <article class="personal">
+          <h2><a href="teacherfinder.html">Software Engineering: TeacherFinder</a></h2>
+          <p>Semester project for the Software Engineering course @ UniTrento. Developed using Vue.js as front-end, Express.js as back-end and documented using Swagger.</p>
+          <p><a href="teacherfinder.html" class="important-link">more on this&mldr;</a></p>
+        </article>
+        <article class="personal">
+          <h2><a class="external" target="_blank" href="https://github.com/deme3/chromium-dark-moodle-unitn">Dark Mode for Moodle @ UniTrento</a></h2>
+          <p>Web extension for Firefox and Chromium-based browsers to override styles in UniTrento LMS (Moodle) and get a good looking Dark Mode.</p>
+          <p>get it on <a class="small external important-link" target="_blank" href="https://github.com/deme3/chromium-dark-moodle-unitn">GitHub</a> or <a class="small external important-link" target="_blank" href="https://chrome.google.com/webstore/detail/moodle-dark-mode-for-unit/ipiigfeopdejnpfoaakochnmpjjafjmn">Chrome Web Store</a></p>
+        </article>
+      </section>
+    </main>
+    {% include_relative footer.html %}
+  </div>
+</body>
+</html>

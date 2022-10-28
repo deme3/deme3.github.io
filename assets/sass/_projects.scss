@@ -1,0 +1,67 @@
+// Baseline Colors
+$base-personal: #d60049;
+$base-work: #2e63b8;
+
+// Light mode
+$light-personal: $base-personal;
+$light-personal-sub: adjust-color($light-personal, $saturation: -20%);
+$light-work: $base-work;
+$light-work-sub: adjust-color($light-work, $saturation: -20%);
+
+// Dark mode
+$dark-personal: adjust-color(#de336d);
+$dark-personal-sub: adjust-color($dark-personal, $saturation: 20%, $lightness: 5%);
+$dark-work: adjust-color($base-work, $lightness: 30%);
+$dark-work: adjust-color(#4373bf);
+$dark-work-sub: adjust-color($dark-work, $saturation: 20%);
+
+:root {
+  --color-personal: #{$light-personal};
+  --color-personal-sub: #{$light-personal-sub};
+  --color-work: #{$light-work};
+  --color-work-sub: #{$light-work-sub};
+}
+
+:root.dark {
+  --color-personal: #{$dark-personal};
+  --color-personal-sub: #{$dark-personal-sub};
+  --color-work: #{$dark-work};
+  --color-work-sub: #{$dark-work-sub};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-personal: #{$dark-personal};
+    --color-personal-sub: #{$dark-personal-sub};
+    --color-work: #{$dark-work};
+    --color-work-sub: #{$dark-work-sub};
+  }
+}
+
+.work > h1 {
+  color: var(--color-work);
+}
+
+.work > article :is(h2, h2 a) {
+  color: var(--color-work-sub);
+}
+
+.work > article h2::before, .work h2 a.external::after {
+  background: var(--color-work-sub);
+}
+
+.personal > h1 {
+  color: var(--color-personal);
+}
+
+.personal > article :is(h2, h2 a) {
+  color: var(--color-personal-sub);
+}
+
+.personal > article h2::before, .personal h2 a.external::after {
+  background: var(--color-personal-sub);
+}
+
+section + section {
+  margin-top: 2em;
+}
