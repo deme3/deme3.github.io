@@ -265,10 +265,6 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-    body, html {
-        overflow-y: hidden;
-    }
-    
     .centered { width: calc(100% - 1px); padding-left: 0; }
 
     .centered > header, main, footer { width: calc(100% - #{$lil-arrow-size * 2}px); padding: 0 #{$lil-arrow-size}px; }
