@@ -125,6 +125,10 @@ strong {
                 @extend %lil-arrow;
             }
         }
+
+        p {
+            margin: 0.35em 0;
+        }
     }
 }
 
