@@ -21,31 +21,47 @@
     <main>
       <section class="work">
         <h1>Work</h1>
-        <article class="work">
-          <h2><a href="nest-academy.html">NEST Academy</a></h2>
-          <p>Proprietary platform for students to create a study plan and have a personal agenda in the NEST Academy programme.</p>
-          <p>Back-end written in Express.js + <a class="small external medium-link" href="https://ejs.co">EJS</a> + MySQL, front-end vanilla HTML / CSS / JavaScript.</p>
-          <p>Currently being rewritten using <a class="small external medium-link" href="https://preactjs.com">Preact.js</a>.</p>
-          <p><a href="nest-academy.html" class="important-link">more on this&mldr;</a></p>
-        </article>
+        {% for post in site.posts %}
+          {% unless post.personal %}
+            <article class="work">
+              {% unless post.external %}
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+              {% else %}
+                <h2><a class="external" target="_blank" href="{{ post.external }}">{{ post.title }}</a></h2>
+              {% endunless %}
+              {% unless post.excerpt contains "<p>" %}
+                <p>{{ post.excerpt }}</p>
+              {% else %}
+                {{ post.excerpt }}
+              {% endunless %}
+              {% unless post.external %}
+                <p><a href="{{ post.url }}" class="important-link">more on this&mldr;</a></p>
+              {% endunless %}
+            </article>
+          {% endunless %}
+        {% endfor %}
       </section>
       <section class="personal">
         <h1>Personal</h1>
-        <article class="personal">
-          <h2><a href="teacherfinder.html">Software Engineering: TeacherFinder</a></h2>
-          <p>Semester project for the Software Engineering course @ UniTrento. Developed using Vue.js as front-end, Express.js as back-end and documented using Swagger.</p>
-          <p><a href="teacherfinder.html" class="important-link">more on this&mldr;</a></p>
-        </article>
-        <article class="personal">
-          <h2><a class="external" target="_blank" href="https://github.com/deme3/chromium-dark-moodle-unitn">Dark Mode for Moodle @ UniTrento</a></h2>
-          <p>Web extension for Firefox and Chromium-based browsers to override styles in UniTrento LMS (Moodle) and get a good looking Dark Mode.</p>
-          <p>get it on <a class="small external important-link" target="_blank" href="https://github.com/deme3/chromium-dark-moodle-unitn">GitHub</a> or <a class="small external important-link" target="_blank" href="https://chrome.google.com/webstore/detail/moodle-dark-mode-for-unit/ipiigfeopdejnpfoaakochnmpjjafjmn">Chrome Web Store</a></p>
-        </article>
-        <article class="personal">
-          <h2><a class="external" target="_blank" href="https://github.com/deme3/chromium-dark-esse3-unitn">Dark Mode for Esse3 @ UniTrento</a></h2>
-          <p>Web extension for Firefox and Chromium-based browsers to override styles in Esse3 (University career management system) and get a good looking Dark Mode.</p>
-          <p>get it on <a class="small external important-link" target="_blank" href="https://github.com/deme3/chromium-dark-esse3-unitn">GitHub</a> or <a class="small external important-link" target="_blank" href="https://chrome.google.com/webstore/detail/esse3-dark%20-mode-for-unit/iehldaaddbjbhiojbecnkemlcckfgpkm">Chrome Web Store</a></p>
-        </article>
+        {% for post in site.posts %}
+          {% if post.personal %}
+            <article class="personal">
+              {% unless post.external %}
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+              {% else %}
+                <h2><a class="external" target="_blank" href="{{ post.external }}">{{ post.title }}</a></h2>
+              {% endunless %}
+              {% unless post.excerpt contains "<p>" %}
+                <p>{{ post.excerpt }}</p>
+              {% else %}
+                {{ post.excerpt }}
+              {% endunless %}
+              {% unless post.external %}
+                <p><a href="{{ post.url }}" class="important-link">more on this&mldr;</a></p>
+              {% endunless %}
+            </article>
+          {% endif %}
+        {% endfor %}
       </section>
     </main>
     {% include_relative footer.html %}

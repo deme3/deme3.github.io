@@ -1,0 +1,40 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.summary }}">
+  {% assign title_short = page.title | split: ":" %}
+  <title>project: {{ title_short[-1] }} | deme3.github.io</title>
+  <link rel="stylesheet" href="/assets/stylesheets/styles.css">
+  <script src="/assets/scripts/darkmode.js"></script>
+  <script src="/assets/scripts/image-popup.js"></script>
+</head>
+<body>
+  <div class="dummy"></div><div class="centered">
+    <header>
+      <nav>
+        <a class="important-link" href="/index.html">home</a> &nbsp; <a class="important-link" href="/projects.html">projects</a> &nbsp; <a class="important-link current" style="pointer-events: none;">{{ title_short[-1] }}</a>
+      </nav>
+    </header>
+    <main>
+      <section class="{% if page.personal %}personal{% else %}work{% endif %}">
+        <h1>{% if page.personal %}Personal{% else %}Work{% endif %}</h1>
+        <article class="{% if page.personal %}personal{% else %}work{% endif %}">
+          <h2>{{ page.title }}</h2>
+          {% if page.article_image %}
+          <p style="max-height: 180px; overflow-y: clip">
+            <img src="{{ page.article_image }}" style="width: 100%; height: auto; margin-bottom: 0" />
+          </p>
+          {% endif %}
+          {{ content }}
+        </article>
+      </section>
+    </main>
+    {% include footer.html %}
+  </div>
+</body>
+</html>
