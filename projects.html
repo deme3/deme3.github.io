@@ -29,6 +29,7 @@
               {% else %}
                 <h2><a class="external" target="_blank" href="{{ post.external }}">{{ post.title }}</a></h2>
               {% endunless %}
+              <p class="date">{{ post.date | date: "%d %B %Y" }}</p>
               {% unless post.excerpt contains "<p>" %}
                 <p>{{ post.excerpt }}</p>
               {% else %}
@@ -51,6 +52,7 @@
               {% else %}
                 <h2><a class="external" target="_blank" href="{{ post.external }}">{{ post.title }}</a></h2>
               {% endunless %}
+              <p class="date">{{ post.date | date: "%d %B %Y" }}</p>
               {% unless post.excerpt contains "<p>" %}
                 <p>{{ post.excerpt }}</p>
               {% else %}

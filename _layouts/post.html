@@ -25,6 +25,7 @@
         <h1>{% if page.personal %}Personal{% else %}Work{% endif %}</h1>
         <article class="{% if page.personal %}personal{% else %}work{% endif %}">
           <h2>{{ page.title }}</h2>
+          <p class="date">{{ page.date | date: "%d %B %Y" }}</p>
           {% if page.article_image %}
           <p style="max-height: 180px; overflow-y: clip">
             <img src="{{ page.article_image }}" style="width: 100%; height: auto; margin-bottom: 0" />

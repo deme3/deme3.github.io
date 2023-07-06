@@ -38,6 +38,16 @@ $dark-work-sub: adjust-color($dark-work, $saturation: 20%);
   }
 }
 
+.work, .personal {
+  article {
+    .date {
+      opacity: 0.5;
+      font-size: 0.8em;
+      margin: 0;
+    }
+  }
+}
+
 .work > h1 {
   color: var(--color-work);
 }
